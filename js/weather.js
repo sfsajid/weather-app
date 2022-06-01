@@ -44,7 +44,7 @@ search.addEventListener("input", (e) => {
 });
 
 const searchCity = async (city) => {
-    const response = await fetch(`http://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${city}`);
+    const response = await fetch(`https://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${city}`);
     const data = await response.json();
     if (data.length == 0) {
         suggBox.innerHTML = `<li>${city}, is not a city</li>`;
@@ -72,7 +72,7 @@ const clickedList = (e) => {
 
 // getting weather by city name
 const getWeather = async (city) => {
-    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=yes`);
+    const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=yes`);
     const data = await response.json();
     setWeather(data);
 }
@@ -159,7 +159,7 @@ const getMonthName = (month) => {
 // Getting Weather by Geo Location
 
 const getWeatherGeo = async (lat, lon) => {
-    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lat},${lon}&aqi=yes`);
+    const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lat},${lon}&aqi=yes`);
     const data = await response.json();
     setWeather(data);
 }
@@ -168,7 +168,7 @@ const getWeatherGeo = async (lat, lon) => {
 // Getting Weather by IP
 
 const getWeatherIp = async () => {
-    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=auto:ip&aqi=yes`);
+    const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=auto:ip&aqi=yes`);
     const data = await response.json();
     setWeather(data);
 }
