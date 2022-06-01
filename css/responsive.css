@@ -1,0 +1,47 @@
+@media screen and (max-width: 800px) {
+  .wpanel {
+    position: relative;
+    width: 100%;
+    /* top: initial; */
+    /* margin-top: 4em; */
+    margin-top: 4rem;
+    padding: 2rem 2rem;
+  }
+
+  .wpanel ul {
+    margin: 1rem 0;
+  }
+
+  /* .flex {
+    min-width: 100%;
+    justify-content: center;
+  } */
+  .fr-2 {
+    justify-content: center;
+  }
+  .fr {
+    height: 12vh;
+  }
+
+  .navbar {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .main {
+    min-height: 40em;
+  }
+}
+
+/* @media screen and (max-width: 1100px) {
+  .wpanel {
+    position: relative;
+  }
+} */

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Weather App 2.0</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.1.3 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- fontawsome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+  </head>
+
+  <body>
+    <div class="main">
+      <nav class="navbar fixed-top">
+        <div class="wrapper">
+          <div class="search-input">
+            <input type="text" id="search" placeholder="Type to search.." />
+            <div class="autocom-box">
+              <li>bdafssadf</li>
+              <!-- here list are inserted from javascript -->
+            </div>
+            <div class="icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container-fluid text-white">
+        <div class="row">
+          <div class="col-md-9 col-12">
+            <div class="row">
+              <div class="col-md-12 fr">
+                <h3 class="brand"></h3>
+              </div>
+              <div class="col-md-12 fr-2">
+                <div class="flex">
+                  <h1 class="temp">16°</h1>
+                  <div class="city-time">
+                    <h1 class="name">London</h1>
+                    <small>
+                      <span class="time">06:09</span>
+                      -
+                      <span class="date">Monday May 16</span>
+                    </small>
+                  </div>
+                  <div class="weather">
+                    <img
+                      src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+                      alt="weather-icon"
+                      class="weather-icon"
+                      width="50"
+                      height="50"
+                    />
+                    <span class="condition">Cloudy</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-12">
+            <div class="wpanel">
+              <ul class="details">
+                <h4>Weather Details</h4>
+                <li>
+                  <span>Cloud</span>
+                  <span class="cloud">89%</span>
+                </li>
+                <li>
+                  <span>Humidity</span>
+                  <span class="humidity">64%</span>
+                </li>
+                <li>
+                  <span>Wind</span>
+                  <span class="wind">3.5 m/s</span>
+                </li>
+                <li>
+                  <span>O<sub>3</sub></span>
+                  <span><span class="ozone">1</span> μg/m<sup>3</sup></span>
+                </li>
+                <li>
+                  <span>CO</span>
+                  <span><span class="co">1</span> μg/m<sup>3</sup></span>
+                </li>
+                <li>
+                  <span>NO<sub>2</sub></span>
+                  <span><span class="no2">1</span> μg/m<sup>3</sup></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="./js/suggestions.js"></script> -->
+    <script src="./js/weather.js"></script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
