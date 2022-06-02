@@ -115,9 +115,21 @@ const getLocation = () => {
 
 // Handling Errors
 const handleError = (error) => {
-    if (error) {
-        getWeather("London");
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            alert("You denied the request for Geolocation. You can search by city name.");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            alert("Location information is unavailable. You can search by city name.");
+            break;
+        case error.TIMEOUT:
+            alert("The request to get your location timed out. You can search by city name.");
+            break;
+        case error.UNKNOWN_ERROR:
+            alert("An unknown error occurred. You can search by city name.");
+            break;
     }
+
 
 }
 
