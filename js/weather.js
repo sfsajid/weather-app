@@ -15,6 +15,7 @@ const humidity = document.querySelector(".humidity");
 const ozone = document.querySelector(".ozone");
 const co = document.querySelector(".co");
 const no2 = document.querySelector(".no2");
+const btnCancel = document.getElementById("btn-cancel");
 const apiKey = "e87b1b77404f4ddca63131931223005";
 
 // Event On Focus Out
@@ -22,14 +23,32 @@ search.addEventListener("focusout", (event) => {
     setTimeout(() => searchBox.classList.remove("active"), 300);
 });
 
+// Deleting text from search box
+btnCancel.addEventListener("click", () => {
+    search.value = "";
+    suggBox.innerHTML = "";
+    suggBox.classList.remove("active");
+    btnCancel.classList.remove("active");
+    btnCancel.classList.add("inactive");
+    setTimeout(() => btnCancel.classList.remove("inactive"), 901);
+});
+
+
 //Event On Focus In
 
 search.addEventListener("focusin", (e) => {
     let data = e.target.value;
     if (data) {
         searchCity(data);
+        btnCancel.classList.add("active");
+        btnCancel.classList.remove("inactive");
     } else {
         searchBox.classList.remove("active");
+        if (btnCancel.classList.contains("active")) {
+            btnCancel.classList.add("inactive");
+            btnCancel.classList.remove("active");
+            setTimeout(() => btnCancel.classList.remove("inactive"), 901);
+        }
     }
 });
 
@@ -38,8 +57,15 @@ search.addEventListener("input", (e) => {
     let data = e.target.value;
     if (data) {
         searchCity(data);
+        btnCancel.classList.add("active");
+        btnCancel.classList.remove("inactive");
     } else {
         searchBox.classList.remove("active");
+        if (btnCancel.classList.contains("active")) {
+            btnCancel.classList.add("inactive");
+            btnCancel.classList.remove("active");
+            setTimeout(() => btnCancel.classList.remove("inactive"), 901);
+        }
     }
 });
 
@@ -90,7 +116,7 @@ const getLocation = () => {
 // Handling Errors
 const handleError = (error) => {
     if (error) {
-        getWeatherIp();
+        getWeather("London");
     }
 
 }
@@ -173,4 +199,7 @@ const getWeatherIp = async () => {
     setWeather(data);
 }
 
-window.onload = getLocation();
+window.onload = async () => {
+    await getWeatherIp();
+    getLocation();
+}

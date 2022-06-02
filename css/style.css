@@ -104,8 +104,42 @@ body {
   line-height: 55px;
   font-size: 20px;
   cursor: pointer;
+  /* opacity: 0; */
   color: #725dff;
+  display: none;
   transition: all 0.3s ease-in-out;
+}
+
+@keyframes rotate {
+  from {
+    transform: translateX(-500%) rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%) rotate(1440deg);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateReverse {
+  from {
+    transform: translateX(0%) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-500%) rotate(1440deg);
+    opacity: 0;
+  }
+}
+
+.search-input .icon.active {
+  display: block;
+  animation: rotate 0.9s ease;
+}
+
+.search-input .icon.inactive {
+  display: block;
+  animation: rotateReverse 0.9s ease;
 }
 
 .search-input .icon:hover {
